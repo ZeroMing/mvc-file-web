@@ -95,7 +95,7 @@ export default {
   },
   methods:{
     file:function(){
-      this.$api.get(this.HOST+'/download', {
+      this.$api.get(this.HOST+'/download1', {
       }, response => {
         if (response.status >= 200 && response.status < 300) {
           console.log(response.data);
@@ -110,6 +110,7 @@ export default {
       if (!data) {
         return
       }
+      // 传参为Blob对象
       let url = window.URL.createObjectURL(new Blob([data]))
       let link = document.createElement('a')
       link.style.display = 'none'

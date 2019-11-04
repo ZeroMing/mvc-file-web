@@ -19,7 +19,7 @@ function apiAxios(method, url, params, response) {
     url: url,
     data: method === 'POST' || method === 'PUT' ? params : null,
     params: method === 'GET' || method === 'DELETE' ? params : null,
-    responseType:'blob'
+    responseType:'arraybuffer'
   }).then(function (res) {
     response(res);
   }).catch(function (err) {
